@@ -27,7 +27,6 @@ jobs:
     strategy:
       matrix:
         modules: [feniks.web_app, ffmpeg_service, senseai_service, snapshot_service]
-        modules2: [feniks.web_app, ffmpeg_service, mngr, senseai_service, smcp, snapshot_service]
 
     runs-on: ubuntu-latest
     permissions:
