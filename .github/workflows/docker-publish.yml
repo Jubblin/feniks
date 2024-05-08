@@ -23,7 +23,9 @@ env:
 
 jobs:
   build:
+    continue-on-error: ${{ matrix.modules }}
     strategy:
+      fail-fast: false
       matrix:
         modules: [feniks.web_app, ffmpeg_service, mngr, senseai_service, smcp, snapshot_service]
 
