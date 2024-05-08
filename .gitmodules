@@ -9,10 +9,10 @@
 	url = https://github.com/mehmetgoren/senseai_service
 [submodule "mngr"]
 	path = mngr
-	url = https://github.com/mehmetgoren/mngr
+	url = https://github.com/Jubblin/mngr
 [submodule "smcp"]
 	path = smcp
-	url = https://github.com/mehmetgoren/smcp
+	url = https://github.com/Jubblin/smcp
 [submodule "feniks.web_app"]
 	path = feniks.web_app
 	url = https://github.com/mehmetgoren/feniks.web_app
