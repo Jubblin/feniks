@@ -26,7 +26,7 @@ jobs:
   build:
     strategy:
       matrix:
-        modules: [feniks.web_app, ffmpeg_service, senseai_service, snapshot_service]
+        modules: [feniks.web_app, ffmpeg_service, mngr, senseai_service, smcp, snapshot_service]
 
     runs-on: ubuntu-latest
     permissions:
@@ -74,14 +74,11 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/${{ matrix.modules }}
 
-      - name change to directory: ${{ matrix.modules }}
-        run: cd ${{ matrix.modules }}
-        
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
       - name: Build and push Docker image
         id: build-and-push
-        uses: c@0565240e2d4ab88bba5387d719585280857ece09 # v5.0.0
+        uses: docker/build-push-action@0565240e2d4ab88bba5387d719585280857ece09 # v5.0.0
         with:
           context: ${{ matrix.modules }}/.
           push: ${{ github.event_name != 'pull_request' }}
